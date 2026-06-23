@@ -7,9 +7,8 @@ from pathlib import Path
 REPORT = Path("/app/report.json")
 
 # Expected values derived from the fixed /app/access.log (6 request lines):
-#   192.168.0.1 -> /index.html (x3)
-#   192.168.0.2 -> /about.html, /index.html
-#   10.0.0.5    -> /api/login, /about.html
+#   unique IPs: 192.168.0.1, 192.168.0.2, 10.0.0.5            -> 3
+#   path tally: /index.html x3, /about.html x2, /api/login x1 -> top is /index.html
 EXPECTED_TOTAL_REQUESTS = 6
 EXPECTED_UNIQUE_IPS = 3
 EXPECTED_TOP_PATH = "/index.html"
